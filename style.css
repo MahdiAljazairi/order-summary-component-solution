@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900);
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: background-color      200ms,
+              color                 200ms,
+              text-decoration-color 200ms;
+}
+
+body {
+  display: grid;
+  grid-template: "................. .... ................." 1fr
+                 "................. card ................." auto
+                 "................. attr ................." minmax(4em,1fr)
+                / minmax(1.4em,1fr) auto minmax(1.4em,1fr);
+  min-height: 100vh;
+  background-color: #e0e8ff; /* Pale Blue */
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 500;
+  color: #7280a7; /* Desaturated Blue */
+}
+
+h1, h2, h3 {
+  color: #1f2f56; /* Dark Blue */
+  font-weight: 900;
+  margin-bottom: .6em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+a {
+  color: #3829e0; /* Bright Blue */
+  font-weight: 700;
+  outline-offset: .5em;
+}
+
+a:hover,
+a:active {
+  color: rgba(56,41,224,.7); /* Bright Blue 70% */
+  text-decoration-color: transparent;
+}
+
+a:focus-visible {
+  color: rgba(56,41,224,.7); /* Bright Blue 70% */
+}
+
+p {
+  line-height: 1.7;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 1em 1.25em;
+  border: 0;
+  font: inherit;
+  font-weight: 900;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  outline-offset: -.3em;
+}
+
+button:hover,
+button:active {
+  color: #1f2f56; /* Dark Blue */
+}
+
+button:focus-visible {
+  color: #1f2f56; /* Dark Blue */
+}
+
+button.accent {
+  background: #3829e0; /* Bright Blue */
+  color: white;
+  width: 100%;
+  outline-offset: 0;
+  border-radius: .7em;
+  box-shadow: 0 1em 1.25em rgba(31,47,86,.2); /* Dark Blue 20% */
+}
+
+button.accent:hover,
+button.accent:active {
+  background: rgba(56,41,224,.7); /* Bright Blue 70% */
+}
+
+button.accent:focus-visible {
+  background: rgba(56,41,224,.7); /* Bright Blue 70% */
+}
+
+.order {
+  grid-area: card;
+  background: white;
+  max-width: 28.25em;
+  min-width: 20.5em;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 3em 3em -2em rgb(31,47,86,.2); /* Dark Blue 20% */
+}
+
+.order .hero {
+  display: block;
+  width: 100%;
+}
+
+.order .wrapper {
+  text-align: center;
+  padding: 3em 3em 2em;
+  padding: clamp(1.6em,6vw,3em);
+  padding-bottom: clamp(1em,4vw,2em)
+}
+
+.order .wrapper > p {
+  margin: 0 1em;
+}
+
+.order form.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.plan {
+  display: flex;
+  background: #f5f7ff; /* Very Pale Blue */
+  gap: 1em;
+  padding: 1em;
+  margin: 1.2em 0;
+  border-radius: .7em;
+}
+
+.plan .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.plan .title {
+  color: #1f2f56; /* Dark Blue */
+  font-weight: 900;
+}
+
+.plan .change {
+  margin: auto 0 auto auto;
+  padding: .3em .4em;
+  outline-offset: initial;
+}
+
+.attribution {
+  grid-area: attr;
+  font-size: .7em;
+  align-self: center;
+  justify-self: center;
+  color: #1f2f56; /* Dark Blue */
+}
+
+@media (max-width: 800px) {
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 15px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+}
